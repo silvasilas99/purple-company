@@ -10,6 +10,7 @@ class EmployeesRole extends Model
 {
     use HasFactory;
 
+    protected $fillable = ["employee_id", "role_id", "performance_grade"];
 
     /**
      * Get the employee.
@@ -28,6 +29,6 @@ class EmployeesRole extends Model
      */
     public function role () : BelongsTo
     {
-        return $this->BelongsTo(Role::class);
+        return $this->belongsTo(Role::class);
     }
 }

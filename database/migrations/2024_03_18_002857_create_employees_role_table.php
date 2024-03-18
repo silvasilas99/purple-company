@@ -15,7 +15,7 @@ return new class extends Migration
             $table->id();
             $table->foreignId("employee_id");
             $table->foreignId("role_id");
-            $table->float("performance_grade");
+            $table->float("performance_grade")->default(0);
             $table->timestamps();
         });
     }

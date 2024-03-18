@@ -10,6 +10,8 @@ class Unit extends Model
 {
     use HasFactory;
 
+    protected $fillable = ["fantasy_name", "social_reason", "cnpj"];
+
     /**
      * Get employees from unit
      *

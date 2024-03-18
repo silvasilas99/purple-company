@@ -5,11 +5,14 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
+use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Database\Eloquent\Relations\HasOne;
 
 class Employee extends Model
 {
     use HasFactory;
+
+    protected $fillable = ["unit_id", "name", "cpf", "email"];
 
     /**
      * Get unit from employee
@@ -26,8 +29,8 @@ class Employee extends Model
      *
      * @return HasOne
      */
-    public function employees_role () : HasOne
+    public function employees_roles () : HasMany
     {
-        return $this->hasOne(EmployeesRole::class);
+        return $this->hasMany(EmployeesRole::class);
     }
 }
