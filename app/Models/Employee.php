@@ -5,6 +5,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
+use Illuminate\Database\Eloquent\Relations\HasOne;
 
 class Employee extends Model
 {
@@ -23,10 +24,10 @@ class Employee extends Model
     /**
      * Get employee's role
      *
-     * @return BelongsTo
+     * @return HasOne
      */
-    public function employees_role () : BelongsTo
+    public function employees_role () : HasOne
     {
-        return $this->belongsTo(EmployeesRole::class, "employees_role_id");
+        return $this->hasOne(EmployeesRole::class);
     }
 }

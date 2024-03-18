@@ -4,19 +4,19 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
-use Illuminate\Database\Eloquent\Relations\BelongsTo;
+use Illuminate\Database\Eloquent\Relations\HasMany;
 
 class Role extends Model
 {
     use HasFactory;
 
     /**
-     * Get employee's role
+     * Get employee's role from role
      *
-     * @return BelongsTo
+     * @return HasMany
      */
-    public function employees_role () : BelongsTo
+    public function employees_roles () : HasMany
     {
-        return $this->belongsTo(EmployeesRole::class, "employees_role_id");
+        return $this->hasMany(EmployeesRole::class);
     }
 }
